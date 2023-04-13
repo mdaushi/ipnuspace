@@ -2,6 +2,9 @@
 export default defineNuxtConfig({
   modules: ["nuxt-headlessui", "@nuxtjs/tailwindcss"],
   runtimeConfig: {
-    googleKey: "api-key",
+    public: {
+      GOOGLE_API_KEY: process.env.GOOGLE_API_KEY,
+      SPREAD_SHEET_ID: process.env.SPREAD_SHEET_ID,
+    },
   },
 });
