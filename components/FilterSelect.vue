@@ -26,7 +26,7 @@
           >
             <ListboxOption
               v-slot="{ active, selected }"
-              v-for="person in people"
+              v-for="person in categories"
               :key="person.name"
               :value="person"
               as="template"
@@ -70,13 +70,18 @@ import {
 } from "@headlessui/vue";
 import { CheckIcon, ChevronUpDownIcon } from "@heroicons/vue/20/solid";
 
-const people = [
-  { name: "Wade Cooper" },
-  { name: "Arlene Mccoy" },
-  { name: "Devon Webb" },
-  { name: "Tom Cook" },
-  { name: "Tanya Fox" },
-  { name: "Hellen Schmidt" },
-];
-const selectedPerson = ref(people[0]);
+import { kategori } from "@/composables/useSheet";
+const { data } = await kategori();
+
+data.value.values.splice(0, 1);
+
+let categories = [];
+
+data.value.values.forEach((element) => {
+  categories.push({
+    name: element[0],
+  });
+});
+
+const selectedPerson = ref(categories[0]);
 </script>
