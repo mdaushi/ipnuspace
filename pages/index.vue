@@ -12,5 +12,5 @@
 
 <script setup>
 const description =
-  "Banyak hal menarik yang ada IPNU, mari saling kenal, saling beri impect. sebaran hal positif dari rekan-rekan untuk semesta raya";
+  "Banyak hal menarik dari Pelajar Nahdlatul Ulama, mari saling kenal, saling beri impect. sebaran hal positif dari rekan-rekan untuk semesta raya";
 </script>
