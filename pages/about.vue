@@ -57,7 +57,7 @@
 const beforeTitle = "Apa itu";
 const afterTitle = "?";
 const description =
-  "Kumpulan hal menarik dari Pelajar Nahdlatul Ulama. dibuat oleh <a href='/'>Muhammad Firdaus</a>, untuk rekan-rekanita, gratis";
+  "Kumpulan hal menarik dari Pelajar Nahdlatul Ulama. dibuat oleh <a class='underline decoration-2 underline-offset-4 decoration-orange-400 hover:text-orange-400' href='https://www.instagram.com/mdaushi_/' target='_blank' >Muhammad Firdaus</a>, untuk rekan-rekanita, gratis";
 
 const linkTambah = process.env.URL_TAMBAH_DATA;
 </script>
