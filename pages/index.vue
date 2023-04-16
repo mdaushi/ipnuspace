@@ -1,5 +1,5 @@
 <template>
-  <div class="">
+  <div class="px-4">
     <main class="mx-auto mt-12 h-full w-full max-w-5xl justify-center">
       <div>
         <AppHero :description="description"></AppHero>

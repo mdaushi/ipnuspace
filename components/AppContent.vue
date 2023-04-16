@@ -1,9 +1,9 @@
 <template>
-  <div class="px-4 md:px-0 mt-2 grid grid-cols-1 gap-4 md:grid-cols-2">
+  <div class="md:px-0 mt-2 grid grid-cols-1 gap-4 md:grid-cols-2">
     <div
       v-for="col in contents"
       :key="col"
-      class="flex h-full flex-col space-y-2 rounded-xl border border-neutral-200 p-4 transition-all ease-in-out @hover:cursor-pointer hover:border-teal-600 hover:bg-neutral-50 dark:border-neutral-700 dark:hover:bg-neutral-900"
+      class="flex h-full flex-col space-y-2 rounded-xl border border-neutral-200 p-4 transition-all ease-in-out @hover:cursor-pointer hover:border-teal-600 hover:bg-neutral-50"
       href="https://www.figma.com/community/plugin/1125115259670703238"
       target="_blank"
       rel="noreferrer"
@@ -12,12 +12,11 @@
         <!-- img -->
       </div>
       <div class="flex h-full w-full flex-col justify-start">
-        <headline
-          class="text-md mr-2 block font-bold text-neutral-700 dark:text-neutral-200"
-          >{{ col.nama }}</headline
-        >
+        <headline class="text-md mr-2 block font-bold text-neutral-700">{{
+          col.nama
+        }}</headline>
         <p
-          class="block h-max text-sm leading-relaxed tracking-wide text-neutral-500 dark:text-neutral-400 md:text-base"
+          class="block h-max text-sm leading-relaxed tracking-wide text-neutral-500 md:text-base"
         >
           {{ col.deskripsi }}
         </p>
@@ -30,7 +29,7 @@
             :href="col.facebook"
             target="_blank"
             rel="noreferrer"
-            class="flex w-max items-center justify-center rounded-full border border-teal-200 bg-teal-50 px-3 py-1 font-mono text-xs font-normal uppercase leading-tight text-teal-700 hover:cursor-pointer dark:border-teal-900 dark:bg-teal-900/30 dark:text-teal-200"
+            class="flex w-max items-center justify-center rounded-full border border-teal-200 bg-teal-50 px-3 py-1 font-mono text-xs font-normal uppercase leading-tight text-teal-700 hover:cursor-pointer"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -53,7 +52,7 @@
             :href="col.instagram"
             target="_blank"
             rel="noreferrer"
-            class="flex w-max items-center justify-center rounded-full border border-red-200 bg-red-50 px-3 py-1 font-mono text-xs font-normal uppercase leading-tight text-red-700 hover:cursor-pointer dark:border-red-900 dark:bg-red-900/30 dark:text-red-200"
+            class="flex w-max items-center justify-center rounded-full border border-red-200 bg-red-50 px-3 py-1 font-mono text-xs font-normal uppercase leading-tight text-red-700 hover:cursor-pointer"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -76,7 +75,7 @@
             :href="col.website"
             target="_blank"
             rel="noreferrer"
-            class="flex w-max items-center justify-center rounded-full border border-cyan-200 bg-cyan-50 px-3 py-1 font-mono text-xs font-normal uppercase leading-tight text-cyan-700 hover:cursor-pointer dark:border-cyan-900 dark:bg-cyan-900/30 dark:text-cyan-200"
+            class="flex w-max items-center justify-center rounded-full border border-cyan-200 bg-cyan-50 px-3 py-1 font-mono text-xs font-normal uppercase leading-tight text-cyan-700 hover:cursor-pointer"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -96,9 +95,9 @@
         </div>
 
         <!-- kategori -->
-        <div>
+        <div class="hidden md:inline">
           <div
-            class="flex w-max items-center justify-center rounded-lg border px-3 py-1 font-mono text-xs font-normal uppercase leading-tight border border-zinc-200 bg-zinc-50 text-zinc-700 dark:border-zinc-900 dark:bg-zinc-900/30 dark:text-zinc-200"
+            class="flex w-max items-center justify-center rounded-lg border px-3 py-1 font-mono text-xs font-normal uppercase leading-tight border border-zinc-200 bg-zinc-50 text-zinc-700"
           >
             {{ col.kategori }}
           </div>

@@ -1,5 +1,5 @@
 <template>
-  <div class="w-72">
+  <div class="w-auto">
     <Listbox v-model="selectedPerson" @click="selectedFilter">
       <div class="relative mt-1">
         <ListboxButton

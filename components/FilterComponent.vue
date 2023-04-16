@@ -1,5 +1,5 @@
 <template>
-  <div class="mt-4 grid grid-cols-1 items-center gap-4 md:grid-cols-2">
+  <div class="mt-4 mb-4 grid grid-cols-1 items-center gap-4 md:grid-cols-2">
     <div>
       <FilterSelect></FilterSelect>
     </div>
