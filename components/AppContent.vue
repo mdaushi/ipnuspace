@@ -26,6 +26,7 @@
         <div class="flex w-full items-center gap-2">
           <!-- Facebook -->
           <a
+            v-show="col.facebook"
             :href="col.facebook"
             target="_blank"
             rel="noreferrer"
@@ -49,6 +50,7 @@
 
           <!-- Instagram -->
           <a
+            v-show="col.instagram"
             :href="col.instagram"
             target="_blank"
             rel="noreferrer"
@@ -72,6 +74,7 @@
 
           <!-- other -->
           <a
+            v-show="col.website"
             :href="col.website"
             target="_blank"
             rel="noreferrer"
