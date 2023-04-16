@@ -1,11 +1,11 @@
 <template>
   <div class="w-72">
-    <Listbox v-model="selectedPerson">
+    <Listbox v-model="selectedPerson" @click="selectedFilter">
       <div class="relative mt-1">
         <ListboxButton
           class="relative w-full cursor-default rounded-lg bg-zinc-100 py-2 pl-3 pr-10 text-left focus:outline-none focus-visible:border-indigo-500 focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 focus-visible:ring-offset-2 focus-visible:ring-offset-orange-300 sm:text-sm"
         >
-          <span class="block truncate">{{ selectedPerson.name }}</span>
+          <span class="block truncate">{{ selectedPerson?.name }}</span>
           <span
             class="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-2"
           >
@@ -70,18 +70,17 @@ import {
 } from "@headlessui/vue";
 import { CheckIcon, ChevronUpDownIcon } from "@heroicons/vue/20/solid";
 
-import { kategori } from "@/composables/useSheet";
-const { data } = await kategori();
+import { useContents } from "~/store/contents";
 
-data.value.values.splice(0, 1);
+const contentsStore = useContents();
 
-let categories = [];
+contentsStore.getCategory();
 
-data.value.values.forEach((element) => {
-  categories.push({
-    name: element[0],
-  });
-});
+const { categories } = contentsStore;
 
 const selectedPerson = ref(categories[0]);
+
+function selectedFilter() {
+  contentsStore.filtrContent(selectedPerson.value.name);
+}
 </script>

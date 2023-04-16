@@ -5,7 +5,7 @@
         <div class="flex h-16 items-center justify-between">
           <div class="flex w-full items-center justify-between">
             <div class="flex flex-shrink-0 items-center">
-              <img
+              <!-- <img
                 alt="Logo"
                 loading="lazy"
                 width="32"
@@ -15,7 +15,7 @@
                 class="rounded-lg"
                 style="color: transparent"
                 src="/plugins-run.svg"
-              />
+              /> -->
             </div>
             <!-- nav menu -->
             <div></div>

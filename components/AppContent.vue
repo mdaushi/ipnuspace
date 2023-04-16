@@ -1,7 +1,7 @@
 <template>
   <div class="px-4 md:px-0 mt-2 grid grid-cols-1 gap-4 md:grid-cols-2">
     <div
-      v-for="col in result"
+      v-for="col in contents"
       :key="col"
       class="flex h-full flex-col space-y-2 rounded-xl border border-neutral-200 p-4 transition-all ease-in-out @hover:cursor-pointer hover:border-teal-600 hover:bg-neutral-50 dark:border-neutral-700 dark:hover:bg-neutral-900"
       href="https://www.figma.com/community/plugin/1125115259670703238"
@@ -14,12 +14,12 @@
       <div class="flex h-full w-full flex-col justify-start">
         <headline
           class="text-md mr-2 block font-bold text-neutral-700 dark:text-neutral-200"
-          >{{ col[1] }}</headline
+          >{{ col.nama }}</headline
         >
         <p
           class="block h-max text-sm leading-relaxed tracking-wide text-neutral-500 dark:text-neutral-400 md:text-base"
         >
-          {{ col[2] }}
+          {{ col.deskripsi }}
         </p>
       </div>
       <div class="flex items-center justify-between pt-4">
@@ -27,7 +27,7 @@
         <div class="flex w-full items-center gap-2">
           <!-- Facebook -->
           <a
-            :href="col[4]"
+            :href="col.facebook"
             target="_blank"
             rel="noreferrer"
             class="flex w-max items-center justify-center rounded-full border border-teal-200 bg-teal-50 px-3 py-1 font-mono text-xs font-normal uppercase leading-tight text-teal-700 hover:cursor-pointer dark:border-teal-900 dark:bg-teal-900/30 dark:text-teal-200"
@@ -50,7 +50,7 @@
 
           <!-- Instagram -->
           <a
-            :href="col[3]"
+            :href="col.instagram"
             target="_blank"
             rel="noreferrer"
             class="flex w-max items-center justify-center rounded-full border border-red-200 bg-red-50 px-3 py-1 font-mono text-xs font-normal uppercase leading-tight text-red-700 hover:cursor-pointer dark:border-red-900 dark:bg-red-900/30 dark:text-red-200"
@@ -73,7 +73,7 @@
 
           <!-- other -->
           <a
-            :href="col[5]"
+            :href="col.website"
             target="_blank"
             rel="noreferrer"
             class="flex w-max items-center justify-center rounded-full border border-cyan-200 bg-cyan-50 px-3 py-1 font-mono text-xs font-normal uppercase leading-tight text-cyan-700 hover:cursor-pointer dark:border-cyan-900 dark:bg-cyan-900/30 dark:text-cyan-200"
@@ -100,7 +100,7 @@
           <div
             class="flex w-max items-center justify-center rounded-lg border px-3 py-1 font-mono text-xs font-normal uppercase leading-tight border border-zinc-200 bg-zinc-50 text-zinc-700 dark:border-zinc-900 dark:bg-zinc-900/30 dark:text-zinc-200"
           >
-            {{ col[6] }}
+            {{ col.kategori }}
           </div>
         </div>
       </div>
@@ -109,10 +109,12 @@
 </template>
 
 <script setup>
-import { allRows } from "@/composables/useSheet";
-const result = ref([]);
-const { data } = await allRows();
+import { storeToRefs } from "pinia";
+import { useContents } from "~/store/contents";
 
-result.value = [...data.value.values];
-result.value.splice(0, 1);
+const contentsStore = useContents();
+
+contentsStore.getContent();
+
+const { contents } = storeToRefs(contentsStore);
 </script>
