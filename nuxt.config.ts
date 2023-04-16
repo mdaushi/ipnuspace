@@ -20,4 +20,11 @@ export default defineNuxtConfig({
       SPREAD_SHEET_ID: process.env.SPREAD_SHEET_ID,
     },
   },
+  extends: ["nuxt-umami"],
+  appConfig: {
+    umami: {
+      id: process.env.NUXT_PUBLIC_UMAMI_ID,
+      host: process.env.NUXT_PUBLIC_UMAMI_HOST,
+    },
+  },
 });

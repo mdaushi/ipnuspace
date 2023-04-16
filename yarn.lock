@@ -3433,6 +3433,11 @@ nuxt-headlessui@^1.1.1:
     "@nuxt/kit" "^3.0.0"
     pathe "^1.0.0"
 
+nuxt-umami@^2.1.5:
+  version "2.1.5"
+  resolved "https://registry.yarnpkg.com/nuxt-umami/-/nuxt-umami-2.1.5.tgz#8c3bfc97077b34811f6ee22cea1f445c1f85840e"
+  integrity sha512-JEn9IhST7y+guNte4R7eDmnzERFz1niHPss6+L3bszRiddVfH38BmwhAogUik0rQt2fyp4VaJmuNMUmeXQWtyg==
+
 nuxt@^3.4.0:
   version "3.4.0"
   resolved "https://registry.npmjs.org/nuxt/-/nuxt-3.4.0.tgz"
