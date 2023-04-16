@@ -90,11 +90,11 @@ const solutions = [
     description: "Kenapa aplikasi ini dibuat",
     href: "/about",
   },
-  {
-    name: "Automations",
-    description: "Create your own targeted content",
-    href: "##",
-  },
+  // {
+  //   name: "Automations",
+  //   description: "Create your own targeted content",
+  //   href: "##",
+  // },
   // {
   //   name: "Reports",
   //   description: "Keep track of your growth",
